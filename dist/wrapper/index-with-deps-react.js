@@ -4,9 +4,9 @@
 	else if(typeof define === 'function' && define.amd)
 		define([], factory);
 	else if(typeof exports === 'object')
-		exports["estadistica"] = factory();
+		exports["prophesier"] = factory();
 	else
-		root["estadistica"] = factory();
+		root["prophesier"] = factory();
 })(this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -62,26 +62,26 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	exports.AnomalyDetection = exports.DescriptiveGPU = exports.DescriptiveCPU = exports.MultiScatterCPU = exports.RegressionGraDescGPU = exports.RegressionGraDescCPU = exports.RegressionLeastSqrCPU = exports.TimelineZoom = exports.BarChart = exports.DonutChart = undefined;
 	
-	var _makeReacty = __webpack_require__(492);
+	var _makeReacty = __webpack_require__(487);
 	
-	var DonutChart = exports.DonutChart = (0, _makeReacty.makeReacty)("estadistica-donut-chart");
+	var DonutChart = exports.DonutChart = (0, _makeReacty.makeReacty)("prophesier-donut-chart");
 	//export const DonutDoubleEverywhere = makeReacty('donutdouble-everywhere');
 	//export const LineEverywhere = makeReacty('line-everywhere')
-	var BarChart = exports.BarChart = (0, _makeReacty.makeReacty)("estadistica-bar-chart");
+	var BarChart = exports.BarChart = (0, _makeReacty.makeReacty)("prophesier-bar-chart");
 	//export const HBarEverywhere = makeReacty('hbar-everywhere');
 	//export const BubbleEverywhere = makeReacty('bubble-everywhere');
-	var TimelineZoom = exports.TimelineZoom = (0, _makeReacty.makeReacty)("estadistica-timeline-zoom");
+	var TimelineZoom = exports.TimelineZoom = (0, _makeReacty.makeReacty)("prophesier-timeline-zoom");
 	
-	var RegressionLeastSqrCPU = exports.RegressionLeastSqrCPU = (0, _makeReacty.makeReactyLit)("estadistica-regressionleastsqr-cpu");
-	var RegressionGraDescCPU = exports.RegressionGraDescCPU = (0, _makeReacty.makeReactyLit)("estadistica-regressiongradesc-cpu");
-	var RegressionGraDescGPU = exports.RegressionGraDescGPU = (0, _makeReacty.makeReactyLit)("estadistica-regressiongradesc-gpu");
+	var RegressionLeastSqrCPU = exports.RegressionLeastSqrCPU = (0, _makeReacty.makeReactyLit)("prophesier-regressionleastsqr-cpu");
+	var RegressionGraDescCPU = exports.RegressionGraDescCPU = (0, _makeReacty.makeReactyLit)("prophesier-regressiongradesc-cpu");
+	var RegressionGraDescGPU = exports.RegressionGraDescGPU = (0, _makeReacty.makeReactyLit)("prophesier-regressiongradesc-gpu");
 	
-	var MultiScatterCPU = exports.MultiScatterCPU = (0, _makeReacty.makeReactyLit)("estadistica-multiscatter-cpu");
+	var MultiScatterCPU = exports.MultiScatterCPU = (0, _makeReacty.makeReactyLit)("prophesier-multiscatter-cpu");
 	
-	var DescriptiveCPU = exports.DescriptiveCPU = (0, _makeReacty.makeReactyLit)("estadistica-descriptive-cpu");
-	var DescriptiveGPU = exports.DescriptiveGPU = (0, _makeReacty.makeReactyLit)("estadistica-descriptive-gpu");
+	var DescriptiveCPU = exports.DescriptiveCPU = (0, _makeReacty.makeReactyLit)("prophesier-descriptive-cpu");
+	var DescriptiveGPU = exports.DescriptiveGPU = (0, _makeReacty.makeReactyLit)("prophesier-descriptive-gpu");
 	
-	var AnomalyDetection = exports.AnomalyDetection = (0, _makeReacty.makeReactyLit)("estadistica-anomaly-detection");
+	var AnomalyDetection = exports.AnomalyDetection = (0, _makeReacty.makeReactyLit)("prophesier-anomaly-detection");
 
 /***/ },
 
@@ -115,10 +115,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	var ReactDOMFactories = __webpack_require__(22);
 	var ReactElement = __webpack_require__(16);
 	var ReactPropTypes = __webpack_require__(23);
-	var ReactVersion = __webpack_require__(30);
+	var ReactVersion = __webpack_require__(28);
 	
-	var createReactClass = __webpack_require__(31);
-	var onlyChild = __webpack_require__(33);
+	var createReactClass = __webpack_require__(29);
+	var onlyChild = __webpack_require__(31);
 	
 	var createElement = ReactElement.createElement;
 	var createFactory = ReactElement.createFactory;
@@ -2127,33 +2127,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	'use strict';
 	
-	var ReactIs = __webpack_require__(26);
+	var emptyFunction = __webpack_require__(9);
+	var invariant = __webpack_require__(12);
+	var warning = __webpack_require__(8);
 	var assign = __webpack_require__(4);
 	
-	var ReactPropTypesSecret = __webpack_require__(28);
-	var checkPropTypes = __webpack_require__(29);
-	
-	var has = Function.call.bind(Object.prototype.hasOwnProperty);
-	var printWarning = function() {};
-	
-	if (false) {
-	  printWarning = function(text) {
-	    var message = 'Warning: ' + text;
-	    if (typeof console !== 'undefined') {
-	      console.error(message);
-	    }
-	    try {
-	      // --- Welcome to debugging React ---
-	      // This error was thrown as a convenience so that you can use this stack
-	      // to find the callsite that caused this warning to fire.
-	      throw new Error(message);
-	    } catch (x) {}
-	  };
-	}
-	
-	function emptyFunctionThatReturnsNull() {
-	  return null;
-	}
+	var ReactPropTypesSecret = __webpack_require__(26);
+	var checkPropTypes = __webpack_require__(27);
 	
 	module.exports = function(isValidElement, throwOnDirectAccess) {
 	  /* global Symbol */
@@ -2244,7 +2224,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	    any: createAnyTypeChecker(),
 	    arrayOf: createArrayOfTypeChecker,
 	    element: createElementTypeChecker(),
-	    elementType: createElementTypeTypeChecker(),
 	    instanceOf: createInstanceTypeChecker,
 	    node: createNodeChecker(),
 	    objectOf: createObjectOfTypeChecker,
@@ -2298,13 +2277,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	      if (secret !== ReactPropTypesSecret) {
 	        if (throwOnDirectAccess) {
 	          // New behavior only for users of `prop-types` package
-	          var err = new Error(
+	          invariant(
+	            false,
 	            'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
 	            'Use `PropTypes.checkPropTypes()` to call them. ' +
 	            'Read more at http://fb.me/use-check-prop-types'
 	          );
-	          err.name = 'Invariant Violation';
-	          throw err;
 	        } else if (false) {
 	          // Old behavior for people using React.PropTypes
 	          var cacheKey = componentName + ':' + propName;
@@ -2313,12 +2291,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	            // Avoid spamming the console because they are often not actionable except for lib authors
 	            manualPropTypeWarningCount < 3
 	          ) {
-	            printWarning(
+	            warning(
+	              false,
 	              'You are manually calling a React.PropTypes validation ' +
-	              'function for the `' + propFullName + '` prop on `' + componentName  + '`. This is deprecated ' +
+	              'function for the `%s` prop on `%s`. This is deprecated ' +
 	              'and will throw in the standalone `prop-types` package. ' +
 	              'You may be seeing this warning due to a third-party PropTypes ' +
-	              'library. See https://fb.me/react-warning-dont-call-proptypes ' + 'for details.'
+	              'library. See https://fb.me/react-warning-dont-call-proptypes ' + 'for details.',
+	              propFullName,
+	              componentName
 	            );
 	            manualPropTypeCallCache[cacheKey] = true;
 	            manualPropTypeWarningCount++;
@@ -2362,7 +2343,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	
 	  function createAnyTypeChecker() {
-	    return createChainableTypeChecker(emptyFunctionThatReturnsNull);
+	    return createChainableTypeChecker(emptyFunction.thatReturnsNull);
 	  }
 	
 	  function createArrayOfTypeChecker(typeChecker) {
@@ -2398,18 +2379,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return createChainableTypeChecker(validate);
 	  }
 	
-	  function createElementTypeTypeChecker() {
-	    function validate(props, propName, componentName, location, propFullName) {
-	      var propValue = props[propName];
-	      if (!ReactIs.isValidElementType(propValue)) {
-	        var propType = getPropType(propValue);
-	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement type.'));
-	      }
-	      return null;
-	    }
-	    return createChainableTypeChecker(validate);
-	  }
-	
 	  function createInstanceTypeChecker(expectedClass) {
 	    function validate(props, propName, componentName, location, propFullName) {
 	      if (!(props[propName] instanceof expectedClass)) {
@@ -2424,17 +2393,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	  function createEnumTypeChecker(expectedValues) {
 	    if (!Array.isArray(expectedValues)) {
-	      if (false) {
-	        if (arguments.length > 1) {
-	          printWarning(
-	            'Invalid arguments supplied to oneOf, expected an array, got ' + arguments.length + ' arguments. ' +
-	            'A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z]).'
-	          );
-	        } else {
-	          printWarning('Invalid argument supplied to oneOf, expected an array.');
-	        }
-	      }
-	      return emptyFunctionThatReturnsNull;
+	       false ? warning(false, 'Invalid argument supplied to oneOf, expected an instance of array.') : void 0;
+	      return emptyFunction.thatReturnsNull;
 	    }
 	
 	    function validate(props, propName, componentName, location, propFullName) {
@@ -2445,14 +2405,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	      }
 	
-	      var valuesString = JSON.stringify(expectedValues, function replacer(key, value) {
-	        var type = getPreciseType(value);
-	        if (type === 'symbol') {
-	          return String(value);
-	        }
-	        return value;
-	      });
-	      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of value `' + String(propValue) + '` ' + ('supplied to `' + componentName + '`, expected one of ' + valuesString + '.'));
+	      var valuesString = JSON.stringify(expectedValues);
+	      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of value `' + propValue + '` ' + ('supplied to `' + componentName + '`, expected one of ' + valuesString + '.'));
 	    }
 	    return createChainableTypeChecker(validate);
 	  }
@@ -2468,7 +2422,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an object.'));
 	      }
 	      for (var key in propValue) {
-	        if (has(propValue, key)) {
+	        if (propValue.hasOwnProperty(key)) {
 	          var error = typeChecker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
 	          if (error instanceof Error) {
 	            return error;
@@ -2482,18 +2436,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	  function createUnionTypeChecker(arrayOfTypeCheckers) {
 	    if (!Array.isArray(arrayOfTypeCheckers)) {
-	       false ? printWarning('Invalid argument supplied to oneOfType, expected an instance of array.') : void 0;
-	      return emptyFunctionThatReturnsNull;
+	       false ? warning(false, 'Invalid argument supplied to oneOfType, expected an instance of array.') : void 0;
+	      return emptyFunction.thatReturnsNull;
 	    }
 	
 	    for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
 	      var checker = arrayOfTypeCheckers[i];
 	      if (typeof checker !== 'function') {
-	        printWarning(
+	        warning(
+	          false,
 	          'Invalid argument supplied to oneOfType. Expected an array of check functions, but ' +
-	          'received ' + getPostfixForTypeWarning(checker) + ' at index ' + i + '.'
+	          'received %s at index %s.',
+	          getPostfixForTypeWarning(checker),
+	          i
 	        );
-	        return emptyFunctionThatReturnsNull;
+	        return emptyFunction.thatReturnsNull;
 	      }
 	    }
 	
@@ -2625,11 +2582,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return true;
 	    }
 	
-	    // falsy value can't be a Symbol
-	    if (!propValue) {
-	      return false;
-	    }
-	
 	    // 19.4.3.5 Symbol.prototype[@@toStringTag] === 'Symbol'
 	    if (propValue['@@toStringTag'] === 'Symbol') {
 	      return true;
@@ -2704,7 +2656,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	
 	  ReactPropTypes.checkPropTypes = checkPropTypes;
-	  ReactPropTypes.resetWarningCache = checkPropTypes.resetWarningCache;
 	  ReactPropTypes.PropTypes = ReactPropTypes;
 	
 	  return ReactPropTypes;
@@ -2714,42 +2665,6 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ },
 
 /***/ 26:
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	if (true) {
-	  module.exports = __webpack_require__(27);
-	} else {
-	  module.exports = require('./cjs/react-is.development.js');
-	}
-
-
-/***/ },
-
-/***/ 27:
-/***/ function(module, exports) {
-
-	/** @license React v16.8.3
-	 * react-is.production.min.js
-	 *
-	 * Copyright (c) Facebook, Inc. and its affiliates.
-	 *
-	 * This source code is licensed under the MIT license found in the
-	 * LICENSE file in the root directory of this source tree.
-	 */
-	
-	'use strict';Object.defineProperty(exports,"__esModule",{value:!0});
-	var b="function"===typeof Symbol&&Symbol.for,c=b?Symbol.for("react.element"):60103,d=b?Symbol.for("react.portal"):60106,e=b?Symbol.for("react.fragment"):60107,f=b?Symbol.for("react.strict_mode"):60108,g=b?Symbol.for("react.profiler"):60114,h=b?Symbol.for("react.provider"):60109,k=b?Symbol.for("react.context"):60110,l=b?Symbol.for("react.async_mode"):60111,m=b?Symbol.for("react.concurrent_mode"):60111,n=b?Symbol.for("react.forward_ref"):60112,p=b?Symbol.for("react.suspense"):60113,q=b?Symbol.for("react.memo"):
-	60115,r=b?Symbol.for("react.lazy"):60116;function t(a){if("object"===typeof a&&null!==a){var u=a.$$typeof;switch(u){case c:switch(a=a.type,a){case l:case m:case e:case g:case f:case p:return a;default:switch(a=a&&a.$$typeof,a){case k:case n:case h:return a;default:return u}}case r:case q:case d:return u}}}function v(a){return t(a)===m}exports.typeOf=t;exports.AsyncMode=l;exports.ConcurrentMode=m;exports.ContextConsumer=k;exports.ContextProvider=h;exports.Element=c;exports.ForwardRef=n;
-	exports.Fragment=e;exports.Lazy=r;exports.Memo=q;exports.Portal=d;exports.Profiler=g;exports.StrictMode=f;exports.Suspense=p;exports.isValidElementType=function(a){return"string"===typeof a||"function"===typeof a||a===e||a===m||a===g||a===f||a===p||"object"===typeof a&&null!==a&&(a.$$typeof===r||a.$$typeof===q||a.$$typeof===h||a.$$typeof===k||a.$$typeof===n)};exports.isAsyncMode=function(a){return v(a)||t(a)===l};exports.isConcurrentMode=v;exports.isContextConsumer=function(a){return t(a)===k};
-	exports.isContextProvider=function(a){return t(a)===h};exports.isElement=function(a){return"object"===typeof a&&null!==a&&a.$$typeof===c};exports.isForwardRef=function(a){return t(a)===n};exports.isFragment=function(a){return t(a)===e};exports.isLazy=function(a){return t(a)===r};exports.isMemo=function(a){return t(a)===q};exports.isPortal=function(a){return t(a)===d};exports.isProfiler=function(a){return t(a)===g};exports.isStrictMode=function(a){return t(a)===f};
-	exports.isSuspense=function(a){return t(a)===p};
-
-
-/***/ },
-
-/***/ 28:
 /***/ function(module, exports) {
 
 	/**
@@ -2768,7 +2683,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 
-/***/ 29:
+/***/ 27:
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -2780,25 +2695,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	'use strict';
 	
-	var printWarning = function() {};
-	
 	if (false) {
+	  var invariant = require('fbjs/lib/invariant');
+	  var warning = require('fbjs/lib/warning');
 	  var ReactPropTypesSecret = require('./lib/ReactPropTypesSecret');
 	  var loggedTypeFailures = {};
-	  var has = Function.call.bind(Object.prototype.hasOwnProperty);
-	
-	  printWarning = function(text) {
-	    var message = 'Warning: ' + text;
-	    if (typeof console !== 'undefined') {
-	      console.error(message);
-	    }
-	    try {
-	      // --- Welcome to debugging React ---
-	      // This error was thrown as a convenience so that you can use this stack
-	      // to find the callsite that caused this warning to fire.
-	      throw new Error(message);
-	    } catch (x) {}
-	  };
 	}
 	
 	/**
@@ -2815,7 +2716,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
 	  if (false) {
 	    for (var typeSpecName in typeSpecs) {
-	      if (has(typeSpecs, typeSpecName)) {
+	      if (typeSpecs.hasOwnProperty(typeSpecName)) {
 	        var error;
 	        // Prop type validation may throw. In case they do, we don't want to
 	        // fail the render phase where it didn't fail before. So we log it.
@@ -2823,28 +2724,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	        try {
 	          // This is intentionally an invariant that gets caught. It's the same
 	          // behavior as without this statement except with a better message.
-	          if (typeof typeSpecs[typeSpecName] !== 'function') {
-	            var err = Error(
-	              (componentName || 'React class') + ': ' + location + ' type `' + typeSpecName + '` is invalid; ' +
-	              'it must be a function, usually from the `prop-types` package, but received `' + typeof typeSpecs[typeSpecName] + '`.'
-	            );
-	            err.name = 'Invariant Violation';
-	            throw err;
-	          }
+	          invariant(typeof typeSpecs[typeSpecName] === 'function', '%s: %s type `%s` is invalid; it must be a function, usually from ' + 'the `prop-types` package, but received `%s`.', componentName || 'React class', location, typeSpecName, typeof typeSpecs[typeSpecName]);
 	          error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
 	        } catch (ex) {
 	          error = ex;
 	        }
-	        if (error && !(error instanceof Error)) {
-	          printWarning(
-	            (componentName || 'React class') + ': type specification of ' +
-	            location + ' `' + typeSpecName + '` is invalid; the type checker ' +
-	            'function must return `null` or an `Error` but returned a ' + typeof error + '. ' +
-	            'You may have forgotten to pass an argument to the type checker ' +
-	            'creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and ' +
-	            'shape all require an argument).'
-	          );
-	        }
+	        warning(!error || error instanceof Error, '%s: type specification of %s `%s` is invalid; the type checker ' + 'function must return `null` or an `Error` but returned a %s. ' + 'You may have forgotten to pass an argument to the type checker ' + 'creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and ' + 'shape all require an argument).', componentName || 'React class', location, typeSpecName, typeof error);
 	        if (error instanceof Error && !(error.message in loggedTypeFailures)) {
 	          // Only monitor this failure once because there tends to be a lot of the
 	          // same error.
@@ -2852,23 +2737,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	          var stack = getStack ? getStack() : '';
 	
-	          printWarning(
-	            'Failed ' + location + ' type: ' + error.message + (stack != null ? stack : '')
-	          );
+	          warning(false, 'Failed %s type: %s%s', location, error.message, stack != null ? stack : '');
 	        }
 	      }
 	    }
-	  }
-	}
-	
-	/**
-	 * Resets warning cache when testing.
-	 *
-	 * @private
-	 */
-	checkPropTypes.resetWarningCache = function() {
-	  if (false) {
-	    loggedTypeFailures = {};
 	  }
 	}
 	
@@ -2877,7 +2749,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 
-/***/ 30:
+/***/ 28:
 /***/ function(module, exports) {
 
 	/**
@@ -2894,7 +2766,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 
-/***/ 31:
+/***/ 29:
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -2914,13 +2786,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    isValidElement = _require2.isValidElement;
 	
 	var ReactNoopUpdateQueue = __webpack_require__(7);
-	var factory = __webpack_require__(32);
+	var factory = __webpack_require__(30);
 	
 	module.exports = factory(Component, isValidElement, ReactNoopUpdateQueue);
 
 /***/ },
 
-/***/ 32:
+/***/ 30:
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -3195,27 +3067,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	     */
 	    componentWillUnmount: 'DEFINE_MANY',
 	
-	    /**
-	     * Replacement for (deprecated) `componentWillMount`.
-	     *
-	     * @optional
-	     */
-	    UNSAFE_componentWillMount: 'DEFINE_MANY',
-	
-	    /**
-	     * Replacement for (deprecated) `componentWillReceiveProps`.
-	     *
-	     * @optional
-	     */
-	    UNSAFE_componentWillReceiveProps: 'DEFINE_MANY',
-	
-	    /**
-	     * Replacement for (deprecated) `componentWillUpdate`.
-	     *
-	     * @optional
-	     */
-	    UNSAFE_componentWillUpdate: 'DEFINE_MANY',
-	
 	    // ==== Advanced methods ====
 	
 	    /**
@@ -3229,23 +3080,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @overridable
 	     */
 	    updateComponent: 'OVERRIDE_BASE'
-	  };
-	
-	  /**
-	   * Similar to ReactClassInterface but for static methods.
-	   */
-	  var ReactClassStaticInterface = {
-	    /**
-	     * This method is invoked after a component is instantiated and when it
-	     * receives new props. Return an object to update state in response to
-	     * prop changes. Return null to indicate no change to state.
-	     *
-	     * If an object is returned, its keys will be merged into the existing state.
-	     *
-	     * @return {object || null}
-	     * @optional
-	     */
-	    getDerivedStateFromProps: 'DEFINE_MANY_MERGED'
 	  };
 	
 	  /**
@@ -3482,7 +3316,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	    if (!statics) {
 	      return;
 	    }
-	
 	    for (var name in statics) {
 	      var property = statics[name];
 	      if (!statics.hasOwnProperty(name)) {
@@ -3499,25 +3332,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	        name
 	      );
 	
-	      var isAlreadyDefined = name in Constructor;
-	      if (isAlreadyDefined) {
-	        var specPolicy = ReactClassStaticInterface.hasOwnProperty(name)
-	          ? ReactClassStaticInterface[name]
-	          : null;
-	
-	        _invariant(
-	          specPolicy === 'DEFINE_MANY_MERGED',
-	          'ReactClass: You are attempting to define ' +
-	            '`%s` on your component more than once. This conflict may be ' +
-	            'due to a mixin.',
-	          name
-	        );
-	
-	        Constructor[name] = createMergedResultFunction(Constructor[name], property);
-	
-	        return;
-	      }
-	
+	      var isInherited = name in Constructor;
+	      _invariant(
+	        !isInherited,
+	        'ReactClass: You are attempting to define ' +
+	          '`%s` on your component more than once. This conflict may be ' +
+	          'due to a mixin.',
+	        name
+	      );
 	      Constructor[name] = property;
 	    }
 	  }
@@ -3827,12 +3649,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	          'componentWillRecieveProps(). Did you mean componentWillReceiveProps()?',
 	        spec.displayName || 'A component'
 	      );
-	      warning(
-	        !Constructor.prototype.UNSAFE_componentWillRecieveProps,
-	        '%s has a method called UNSAFE_componentWillRecieveProps(). ' +
-	          'Did you mean UNSAFE_componentWillReceiveProps()?',
-	        spec.displayName || 'A component'
-	      );
 	    }
 	
 	    // Reduce time spent doing lookups by setting these on the prototype.
@@ -3853,7 +3669,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 
-/***/ 33:
+/***/ 31:
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -3894,7 +3710,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 
-/***/ 492:
+/***/ 487:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3917,7 +3733,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _skatejsval = __webpack_require__(493);
+	var _skatejsval = __webpack_require__(488);
 	
 	var _skatejsval2 = _interopRequireDefault(_skatejsval);
 	
@@ -4214,7 +4030,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 
-/***/ 493:
+/***/ 488:
 /***/ function(module, exports) {
 
 	'use strict';
